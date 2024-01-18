@@ -35,15 +35,17 @@ def check_website(url, target_element_id):
             previous_options = current_options
 
             # Wait for a certain period before checking again
-            time.sleep(5)  # Check every 60 seconds (adjust as needed)
+            # Adjust the counter, howmuch time you want to wait before new request
+            time.sleep(5)  
 
         except requests.exceptions.RequestException as e:
             print(f"Error: {e}")
             time.sleep(60)  # Wait for a while before trying again in case of an error
 
 if __name__ == "__main__":
-    # Specify the URL of the website and the ID of the target dropdown element
+    # Specify the URL of the website 
     website_url = "https://www.logxgroup.me/"
+    # Specify the field you want to detect the change from
     dropdown_id = "info"
 
     check_website(website_url, dropdown_id)
